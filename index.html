@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		html,
+		body {
+			margin: 0;
+		}
+		
+		
+
+	</style>
+	
+	<meta charset="UTF-8">
+	<meta name="viewpoint" content="width=device-wedth, initial-scale=1.0">
+	<title>Zero Hunger Initiative</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li class="active"><a href="game.html">Game</a></li>
+    </ul>
+	<header>
+		<h1>Zero Hunger Initiative</h1>
+		<p>Working towards a world that has no hunger</p>
+	</header>
+	<section>
+	<div class="banner">
+		<div class="banner__content">
+			<div class="banner__text">
+				<strong>Reminder:</strong> please help by donating to the cause, as little as 1 euro can help make a difference.
+			</div>
+			<button class="banner__close" type="button">
+				<span class="material-icons">
+					close
+				</span>
+			</button>
+				
+	
+	
+		<div class="container">
+			<div class="content">
+				<h2>Our Mission</h2>
+				<!-- This is a comment -->
+				<!-- Rememeber to add a paragraph -->
+				<p>By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.</p>
+			
+			</div>
+			<div class="image">
+				<img src="images/zerohunger.jpg" alt="Mission Image">
+			</div>
+		</div>
+		<div class="container">
+			<div class="image">
+				<h2>Join Us</h2>
+				<p>Help us change the world by abolishing world hunger and this can be done with your help by clicking the button in the top right and help by donating</p>
+			</div>
+			<div class="image">
+				<img src="images/fighting world hunger.jpg" alt="Help us Image">
+			</div>
+		</div>
+	</section>
+	<script>
+		document.querySelector(".banner__close").addEventListener("click", function () {   
+			this.closest(".banner").style.display = "none";
+		});
+	</script>
+</body>
+</html>		

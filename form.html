@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // validateEmail
+        function validateEmail() {
+            console.log("validateEmail is called");
+            var emailField = document.getElementById("emailfield");
+            var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (reg.test(emailField.value) == false) {
+                alert('Invalid Email Address');
+                return false;
+            } else {
+                alert('Thank you for contacting us ' + emailField.value);
+                return true;
+            }
+        }
+
+        // Function to gather details and display an alert
+        function giveBackDetails() {
+            var name1 = document.getElementById("namefield").value;
+            var name2 = document.getElementById("emailfield").value;
+            var name3 = document.getElementById("homefield").value;
+            var name4 = document.getElementById("donatefield").value;
+            var name5 = document.getElementById("cardfield").value;
+
+            alert("Your Name: " + name1 + "\nYour Email: " + name2 + "\nYour Address: " + name3 + "\nYour Donation: " + name4 + "\nCard Number: " + name5);
+        
+         // Display thank you message
+         var thankYouMessage = document.getElementById("thankYouMessage");
+            thankYouMessage.innerHTML = "Thank you for your donation!";
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+
+    <div id="header-div">
+        <h1> DONATIONS </h1>
+    </div>
+
+    <div id="main-div">
+        <div id="form-title">
+            <h1>Details</h1>
+        </div>
+
+        <div id="form-div">
+            <form>
+                <label>Enter full name</label>
+                <input type="text" placeholder="Enter Your full Name Here" required minlength="5" maxlength="40" size="20" id="namefield">
+                <br>
+                <br>
+                <label id="labelemail">Enter email address</label>
+                <input type="email" placeholder="Enter Your email Here" onblur="validateEmail()" required minlength="5" maxlength="40" size="20" id="emailfield">
+                <br>
+                <br>
+                <label id="labelhome">Enter home address</label>
+                <input type="text" placeholder="Enter Your home address here" required minlength="5" maxlength="40" size="25" id="homefield">
+                <br>
+                <br>
+                <label id="labeldonate">Enter amount you want to donate</label>
+                <input type="text" placeholder="Enter donation amount" required minlength="1" maxlength="20" size="20" id="donatefield">
+                <br>
+                <br>
+                <label id="labeldonate">Enter your card number</label>
+                <input type="text" placeholder="Enter card number" required minlength="5" maxlength="20" size="20" id="cardfield">
+                <br>
+                <br>
+                <label>I agree to the T&C </label>
+                <input type="checkbox">
+                <br>
+                <input type="button" value="Submit Details" onclick="giveBackDetails()">
+                <p><span id="thankYouMessage"></span></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

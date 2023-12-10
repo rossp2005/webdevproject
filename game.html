@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edvin Krasovski">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        // Initialize the scores outside the rollDice function
+        var score = [0, 0];
+
+        // This function will be called when the user clicks the "Roll the Dice" button
+        function rollDice() {
+            // Generate a random number between 1 and 6 for the user and computer
+            var userRoll = Math.floor(Math.random() * 6) + 1;
+            var computerRoll = Math.floor(Math.random() * 6) + 1;
+
+            var diceResult = "You rolled: " + userRoll + " Computer rolled: " + computerRoll;
+
+            if (userRoll > computerRoll) {
+                diceResult += " You win!";
+                // Update the user's score
+                score[0] += 1;
+            } else if (userRoll < computerRoll) {
+                diceResult += " Computer wins!";
+                // Update the computer's score
+                score[1] += 1;
+            } else {
+                diceResult += " It's a tie!";
+            }
+
+            // Display the result and score on the page
+            displayScore();
+            alert(diceResult);
+        }
+        // This function will be called when the user clicks the "Yes" or "No" button
+        function displayScore() {
+            var scoreArea = document.getElementById("scoreArea");
+            scoreArea.innerHTML = "<p>Score: " + score[0] + " - " + score[1] + "</p>";
+        }
+
+        // This function will be called when the user clicks the "Yes" or "No" button
+        function playGame(answer) {
+            // Get the play area element    
+            var playArea = document.getElementById("playArea");
+            // If the user wants to play, it displays the button to roll the dice
+            if (answer === 'yes') {
+                playArea.innerHTML = "<button onclick='rollDice()'>Roll the Dice</button>";
+            } else if (answer === 'no') {
+                // If the user doesn't want to play, it displays the message below
+                playArea.innerHTML = "<p>Maybe next time! Feel free to play whenever you're ready.</p>";
+            }
+        }
+
+
+        function resetScore() {
+            // Reset the scores
+            score[0] = 0;
+            score[1] = 0;
+        
+            // Display the reset scores on the page
+            displayScore();
+        }
+    </script>
+</head>
+<body>
+    <!-- NavBar -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li class="active"><a href="game.html">Game</a></li>
+    </ul>
+
+
+
+    <!-- Main content -->
+
+    <h1> </h1>
+
+
+    <h1 class="center">Dice Game</h1>
+    <div class="center">
+        <h4>Would you like to play the game?</h4>
+        <button onclick="playGame('yes')">Yes</button>
+        <button onclick="playGame('no')">No</button>
+
+        <!-- Play area where the GUI for rolling the dice will be displayed -->
+        <div id="playArea"></div>
+        <div id="scoreArea"></div>
+        <button  onclick="resetScore()">Reset Score</button>
+    </div>
+</body>
+</html>

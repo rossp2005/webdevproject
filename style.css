@@ -1,0 +1,148 @@
+/* Edvin Krasovski*/
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+
+
+
+
+/* Navbar Reference: https://www.w3schools.com/css/css_navbar_horizontal.asp  */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #3a3c42;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+
+
+/*   game      */
+button {
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+li {
+        float: none;
+        width: 100%;
+}
+
+li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+}
+
+.active {
+        background-color: #04AA6D;
+}
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        width: 100%;
+    }
+}
+
+/* adapted and changed from: https://www.w3.org/Style/Examples/007/center.en.html */ 
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    /* rem is relative to font-size of the root element */
+    width: 16rem;
+}
+
+/* ------------------- */
+/* ross's css */
+
+
+/*header  */
+#header-div{ 
+	width:100%;
+	background-color:grey;
+	min-height:50px;
+	line-height:50px;
+	text-align:center;
+}
+
+
+/*will work as body  */
+#main-div{
+
+	width:100%;
+	text-align:center;
+	background-color: #009579;
+	min-height:500px
+	
+
+}
+/* ------------------- */
+
+
+/* connors css */
+.banner {
+    background: #009579;
+}
+   
+   
+.banner__content {
+    padding: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+       
+       
+}
+   
+   
+.banner__text{
+    flex-grow: 1;
+    line-height: 1.4;
+    font-family: 'Quicksand' , sans-serif;
+   
+}
+.banner__close {
+       background: none;
+       border: none;
+       cursor: pointer;
+}
+   
+   
+   
+.banner__text,
+.banner__close>span {
+   color: #ffffff;
+}
